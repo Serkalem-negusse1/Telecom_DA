@@ -1,14 +1,18 @@
-# scripts/load_data.py
-
 import os
 import psycopg2
 import pandas as pd
 from dotenv import load_dotenv
 from sqlalchemy import create_engine
 
-
 # Load environment variables from .env file
 load_dotenv()
+
+# Check if environment variables are loaded correctly (for debugging)
+print(f"DB_HOST: {os.getenv('DB_HOST')}")
+print(f"DB_PORT: {os.getenv('DB_PORT')}")
+print(f"DB_NAME: {os.getenv('DB_NAME')}")
+print(f"DB_USER: {os.getenv('DB_USER')}")
+print(f"DB_PASSWORD: {os.getenv('DB_PASSWORD')}")
 
 # Fetch database connection parameters from environment variables
 DB_HOST = os.getenv("DB_HOST")
@@ -45,7 +49,6 @@ def load_data_from_postgres(query):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
-
 
 
 def load_data_using_sqlalchemy(query):
