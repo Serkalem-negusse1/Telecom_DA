@@ -1,11 +1,11 @@
-# telecom_analysis.py
+# Script
 import numpy as np
 import pandas as pd
 from scipy import stats
 from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
-class TelecomEDA:
+class Telecom_EDA:
     def __init__(self, df):
         self.df = df
 
@@ -32,10 +32,10 @@ class TelecomEDA:
         decile_summary = self.df.groupby('Decile').agg({'Total_Duration': 'sum'}).reset_index()
         return decile_summary
     
-
     def basic_metrics(self):
         """Analyze basic metrics."""
-        return self.df.mean(), self.df.median()
+        numeric_columns = self.df.select_dtypes(include=[np.number])
+        return numeric_columns.mean(), numeric_columns.median()
 
     def correlation_analysis(self):
         """Compute the correlation matrix."""
@@ -52,7 +52,7 @@ class TelecomEDA:
         return pca.explained_variance_ratio_
 
 if __name__ == "__main__":
-    analysis = TelecomEDA("telecom_data.csv")
+    analysis = Telecom_EDA(pd.read_csv("E:/10Academy/Data02/telecom_data.csv"))
     analysis.handle_missing_values()
     analysis.handle_outliers()
     print(analysis.describe_data())
