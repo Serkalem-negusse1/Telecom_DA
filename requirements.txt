@@ -10,4 +10,4 @@ plotly
 streamlit
 sqlalchemy
 pytest
-#mlflow
+pymysql
