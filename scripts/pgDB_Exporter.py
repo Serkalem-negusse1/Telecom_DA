@@ -37,5 +37,5 @@ def export_to_mysql(df, db_user, db_password, db_host, db_name, table_name):
     except Exception as e:
         print(f"General error occurred: {e}")
 
-# Example call to the function
-# export_to_mysql(result_df, db_user, db_password, db_host, db_name, table_name)
+# Example to call the function
+
