@@ -63,7 +63,7 @@ class OverviewAnalyzer:
     
 
     def aggregate_user_behavior(self, df):
-        # Group by 'MSISDN/Number' to aggregate data per user
+        # Group by 'MSISDN/Number' to aggregate data per user.
         user_behavior = df.groupby('MSISDN/Number').agg(
             num_xdr_sessions=('Bearer Id', 'count'),
             total_session_duration=('Dur. (ms)', 'sum'),
