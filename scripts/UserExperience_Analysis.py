@@ -154,7 +154,7 @@ class TelecomUserExperience:
                 print(f"Average TCP Retransmission: {avg_tcp:.2f}")
                 print(f"Average Throughput: {avg_throughput:.2f}")
 
-            # Plotting clusters
+            # Plotting clusters.
             plt.figure(figsize=(10, 6))
             plt.scatter(customer_agg['Average Throughput'], customer_agg['Average TCP Retransmission'], 
                         c=customer_agg['Cluster'], cmap='viridis', marker='o')
