@@ -194,7 +194,7 @@ class TelecomUserEngagement:
         # Convert the dictionary to a Series for easier manipulation
         application_traffic_series = pd.Series(application_traffic)
 
-        # Find the top 3 applications with the highest total traffic
+        # Find the top 3 applications with the highest total traffic.
         top_3_applications = application_traffic_series.nlargest(3)
         
         # Set up the matplotlib figure
